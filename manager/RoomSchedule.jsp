@@ -7,7 +7,7 @@
 <%@ page import="com.mysql.jdbc.Driver"%>
 
 <!DOCTYPE html>
-<html lang="utf8">
+<html lang="en">
 
 <head>
 
@@ -124,8 +124,14 @@
 			<!-- Divider -->
 			<hr class="sidebar-divider my-0">
 
-
-
+			<!-- Nav Item - Dashboard -->
+			<!--  
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>儀表板</span></a>
+      </li>
+-->
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
@@ -186,7 +192,7 @@
 						<a class="collapse-item" href="blank.html">Blank Page</a>
 					</div>
 				</div></li>
-			-->
+-->
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" href="dictionary.html">
 					<i class="fas fa-fw fa-chart-area"></i> <span>字典表</span>
@@ -259,7 +265,6 @@
 								</a>
 							</div></li>
 							-->
-
 					</ul>
 
 				</nav>
@@ -271,7 +276,7 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">維護課程表</h1>
+					<h1 class="h3 mb-2 text-gray-800">維護處室表</h1>
 
 					<!-- DataTales Example -->
 					<div class="card-header py-3">
@@ -288,126 +293,43 @@
 							role="dialog" aria-hidden="true" data-backdrop="static"
 							data-keyboard="true">
 							<div class="modal-dialog modal-lg">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h4 class="modal-title text-center" id="myModalLabel" style="">
-											新增課表</h4>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-hidden="true">×</button>
-
-									</div>
-									<div class="modal-body">
-										<form action="course_add.jsp">
-											<div class="form-group">
-												<label for="ClassName" class="col-form-label">課程名稱</label> <input
-													type="text" class="form-control" id="ClassName"
-													name="courseName">
-											</div>
-											<div class="form-group">
-												<label for="ClassNum" class="col-form-label">授課時間</label> <select
-													class="form-control" id="ClassNum" name="weekDay">
-													<option value="一">每週一</option>
-													<option value="二">每週二</option>
-													<option value="三">每週三</option>
-													<option value="四">每週四</option>
-													<option value="五">每週五</option>
-													<option value="六">每週六</option>
-													<option value="日">每週日</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<label for="ClassNum" class="col-form-label">節次</label> <select
-													class="form-control" id="ClassNum" name="number">
-													<option>一</option>
-													<option>二</option>
-													<option>三</option>
-													<option>四</option>
-													<option>五</option>
-													<option>六</option>
-												</select>
-
-											</div>
-											<div class="form-group">
-												<label for="ClassTeacher" class="col-form-label">授課老師(請選擇)</label>
-												<select class="form-control" id="ClassTeacher"
-													name="teacher">
-													<option selected="selected" value="陳文雄">陳文雄</option>
-													<option selected="selected" value="劉福音">劉福音</option>
-													<option selected="selected" value="陳瑛琪">陳瑛琪</option>
-													<option selected="selected" value="林曉雯">林曉雯</option>
-													<option selected="selected" value="陳光澄">陳光澄</option>
-													<option selected="selected" value="蘇啟鴻">蘇啟鴻</option>
-													<option selected="selected" value="林政錦">林政錦</option>
-													<option selected="selected" value="呂崇富">呂崇富</option>
-													<option selected="selected" value="王德華">王德華</option>
-													<option selected="selected" value="郭景致">郭景致</option>
-													<option selected="selected" value="曲莉莉">曲莉莉</option>
-													<option selected="selected" value="林裕淇">林裕淇</option>
-													<option selected="selected" value="潘志雄">潘志雄</option>
-													<option selected="selected" value="劉勇麟">劉勇麟</option>
-													<option selected="selected" value="張翰軒">張翰軒</option>
-													<option selected="selected" value="張慧">張慧</option>
-													<option selected="selected" value="高楊達">高楊達</option>
-													<option selected="selected" value="蔡殿偉">蔡殿偉</option>
-													<option selected="selected" value="趙士賓">趙士賓</option>
-													<option selected="selected" value="陳冠燁">陳冠燁</option>
-													<option selected="selected" value="林紹胤">林紹胤</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<label for="ClassPlace" class="col-form-label">授課地點</label>
-												<input type="text" class="form-control" id="ClassPlace"
-													name="place">
-											</div>
-											<div class="form-group">
-												<label for="ClassScore" class="col-form-label">學分數</label> <select
-													class="form-control" id="ClassScore" name="credit">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-													<option>6</option>
-												</select>
-
-											</div>
-											<div class="modal-footer">
-												<button type="submit" class="btn btn-primary">確定</button>
-												<button type="button" class="btn btn-default"
-													data-dismiss="modal">取消</button>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- 新增授課老師課表 -->
-						<div id="yyy" class="modal inmodal fade" tabindex="-1"
-							role="dialog" aria-hidden="true" data-backdrop="static"
-							data-keyboard="true">
-							<div class="modal-dialog modal-lg">
-								<form action="teacher_add.jsp">
+								<form action="office_add.jsp">
 									<div class="modal-content">
 										<div class="modal-header">
 											<h4 class="modal-title text-center" id="myModalLabel"
-												style="">新增授課老師</h4>
+												style="">新增處室表</h4>
 											<button type="button" class="close" data-dismiss="modal"
 												aria-hidden="true">×</button>
+
 										</div>
 										<div class="modal-body">
 
+											<!--  
 											<div class="form-group">
-												<label for="TeacherName" class="col-form-label">授課老師名稱</label>
-												<input type="text" class="form-control" id="TeacherName"
-													name="teacher">
+												<label for="ClassID" class="col-form-label">編號(自動帶入)</label>
+												<input type="text" class="form-control" id="ClassID">
+											</div>
+											-->
+											<div class="form-group">
+												<label for="ClassName" class="col-form-label">處室名稱</label> <input
+													type="text" class="form-control" id="ClassName"
+													name="officeName">
 											</div>
 											<div class="form-group">
-												<label for="TeacherImg" class="col-form-label">圖檔名稱</label>
-												<input type="text" class="form-control" id="TeacherImg"
+												<label for="ClassName" class="col-form-label">大樓</label> <input
+													type="text" class="form-control" id="ClassName"
+													name="building">
+											</div>
+											<div class="form-group">
+												<label for="ClassName" class="col-form-label">樓層</label> <input
+													type="text" class="form-control" id="ClassName"
+													name="floor">
+											</div>
+											<div class="form-group">
+												<label for="ClassUpload" class="col-form-label">圖檔名稱</label>
+												<input type="text" class="form-control" id="ClassUpload"
 													name="picName">
 											</div>
-
 										</div>
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-primary">確定</button>
@@ -419,17 +341,62 @@
 							</div>
 						</div>
 
+						<!-- 新增教室課表 -->
+						<div id="AddRoomModule" class="modal inmodal fade" tabindex="-1"
+							role="dialog" aria-hidden="true" data-backdrop="static"
+							data-keyboard="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title text-center" id="myModalLabel" style="">
+											新增教室課表</h4>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-hidden="true">×</button>
+
+									</div>
+									<div class="modal-body">
+										<form>
+											<!--  
+											<div class="form-group">
+												<label for="RoomID" class="col-form-label">編號(自動帶入)</label>
+												<input type="text" class="form-control" id="RoomID">
+											</div>
+											-->
+											<div class="form-group">
+												<label for="RoomName" class="col-form-label">教室名稱</label> <input
+													type="text" class="form-control" id="RoomName">
+											</div>
+											<div class="form-group">
+												<label for="RoomImg" class="col-form-label">圖檔名稱</label> <input
+													type="text" class="form-control" id="RoomImg">
+											</div>
+										</form>
+									</div>
+
+
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary">確定</button>
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">取消</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
 						<!-- 使用按鈕開啟  data-target-->
 						<button type="button" class="btn btn-primary btn-icon-split"
 							data-toggle="modal" data-target="#ooo">
-							<span class="icon text-white-80"> <i class="fas fa-flag"></i>
-								新增課表
+							<span class="icon text-white-80"> <i
+								class="fas fa-book-reader"></i> 新增處室表
 							</span>
 						</button>
 
 						<button type="button" class="btn btn-primary btn-icon-split"
-							data-toggle="modal" data-target="#yyy">
-							<span class="icon text-white-80">新增授課老師</span>
+							data-toggle="modal" data-target="#AddRoomModule">
+							<span class="icon text-white-80"> <i
+								class="fas fa-book-reader"></i> 新增教室表
+							</span>
 						</button>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -438,12 +405,10 @@
 									<thead>
 										<tr>
 											<th>編號</th>
-											<th>課程名稱</th>
-											<th>授課時間</th>
-											<th>節次</th>
-											<th>授課老師</th>
-											<th>授課地點</th>
-											<th>學分數</th>
+											<th>處室名稱</th>
+											<th>大樓</th>
+											<th>樓層</th>
+											<th>圖名</th>
 											<th>操作</th>
 										</tr>
 									</thead>
@@ -458,37 +423,31 @@
 													out.println("連線 MySQL 失敗!!");
 												} else {
 
-													String query = "select * from course";
+													String query = "select * from office";
 													Statement st = con.createStatement();
 													ResultSet rs = st.executeQuery(query);
 													while (rs.next()) {
 										%>
-
 										<tr>
 											<td><%=rs.getLong("id")%></td>
-											<td><%=rs.getString("courseName")%></td>
-											<td>每週<%=rs.getString("weekDay")%></td>
-											<td>第<%=rs.getString("number")%>節
-											</td>
-											<td><%=rs.getString("teacher")%></td>
-											<td><%=rs.getString("place")%></td>
-											<td><%=rs.getInt("credit")%></td>
+											<td><%=rs.getString("officeName")%></td>
+											<td><%=rs.getString("building")%></td>
+											<td><%=rs.getString("floor")%></td>
+											<td><%=rs.getString("picName")%></td>
 											<td>
-												<!--  修改課程
+												<!--  
 												<button type="button"
 													class="btn btn-primary btn-circle btn-sm"
 													data-toggle="modal" data-target="#editModal">
 													<i class="fas fa-edit"></i>
 												</button>
--->
-
+												-->
 												<button type="button"
 													class="btn btn-danger btn-circle btn-sm"
 													data-toggle="modal"
 													data-target="#deleteModal<%=rs.getLong("id")%>">
 													<i class="fas fa-trash"></i>
 												</button>
-
 												<div id="deleteModal<%=rs.getLong("id")%>"
 													class="modal fade" tabindex="-1" role="dialog"
 													style="display: none;">
@@ -496,52 +455,44 @@
 														<div class="modal-content">
 															<div class="modal-header">
 																<h4 class="modal-title" id="myModalLabel" style="">
-																	刪除課表</h4>
+																	刪除處室表</h4>
 																<button type="button" class="close" data-dismiss="modal"
 																	aria-hidden="true">×</button>
 															</div>
-															<form id="deleteForm" class="form-horizontal"
-																action="course_delete.jsp">
-																<div class="modal-body">
+															<div class="modal-body">
+																<form id="deleteForm" class="form-horizontal">
 																	<div class="form-group">
 																		<div class="col-md-12">
 																			確定要刪除 <font color="red"><span id="deleteMsg"></span></font>
-																			<%=rs.getString("courseName")%>
-																			課程
+																			處室表
 																		</div>
 																		<div class="col-md-12">
 																			<font color="red"><span id="deleteMsg2"></span></font>
 																		</div>
 																	</div>
-																</div>
+																</form>
+															</div>
 
-																<div class="modal-footer">
-																	<div class="col-md-12">
-																		<input type="hidden" name="id"
-																			value="<%=rs.getLong("id")%>">
-																		<button type="submit" id="deleteConfirm"
-																			class="btn btn-primary">確定</button>
-																		<button type="cancel" id="deleteCancel"
-																			class="btn btn-primary" data-dismiss="modal">取消</button>
-																	</div>
+															<div class="modal-footer">
+																<div class="col-md-12">
+																	<button type="button" id="deleteConfirm"
+																		class="btn btn-primary">確定</button>
+																	<button type="button" id="deleteCancel"
+																		class="btn btn-primary" data-dismiss="modal">取消</button>
 																</div>
-															</form>
-														</div>
-													</div>
-												</div>
+															</div>
 											</td>
-										</tr>
 
-										<%
-											}
-													rs.close();
+											<%
 												}
-												con.close();
-											} catch (Exception sExec) {
-												out.println("SQL錯誤:" + sExec.toString());
-											}
-										%>
-
+														rs.close();
+													}
+													con.close();
+												} catch (Exception sExec) {
+													out.println("SQL錯誤:" + sExec.toString());
+												}
+											%>
+										
 									</tbody>
 								</table>
 							</div>
