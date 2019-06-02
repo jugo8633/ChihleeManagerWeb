@@ -1,5 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" language="java"
-	session="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Arrays"%>
 <%@ page language="java"%>
@@ -294,22 +293,27 @@
 
 									</div>
 									<div class="modal-body">
-										<form>
+										<form action="course_add.jsp">
 											<div class="form-group">
-												<label for="ClassID" class="col-form-label">編號(自動帶入)</label>
-												<input type="text" class="form-control" id="ClassID">
+												<label for="ClassName" class="col-form-label">課程名稱</label> <input
+													type="text" class="form-control" id="ClassName"
+													name="courseName">
 											</div>
 											<div class="form-group">
-												<label for="ClassName" class="col-form-label">課程名稱(請選擇)</label>
-												<input type="text" class="form-control" id="ClassName">
-											</div>
-											<div class="form-group">
-												<label for="ClassTime" class="col-form-label">授課時間</label> <input
-													type="text" class="form-control" id="ClassTime">
+												<label for="ClassNum" class="col-form-label">授課時間</label> <select
+													class="form-control" id="ClassNum" name="weekDay">
+													<option value="一">每週一</option>
+													<option value="二">每週二</option>
+													<option value="三">每週三</option>
+													<option value="四">每週四</option>
+													<option value="五">每週五</option>
+													<option value="六">每週六</option>
+													<option value="日">每週日</option>
+												</select>
 											</div>
 											<div class="form-group">
 												<label for="ClassNum" class="col-form-label">節次</label> <select
-													class="form-control" id="ClassNum">
+													class="form-control" id="ClassNum" name="number">
 													<option>一</option>
 													<option>二</option>
 													<option>三</option>
@@ -321,42 +325,39 @@
 											</div>
 											<div class="form-group">
 												<label for="ClassTeacher" class="col-form-label">授課老師(請選擇)</label>
-												<select class="form-control" id="ClassTeacher">
-													<option selected="selected" value="">陳文雄</option>
-													<option selected="selected" value="">劉福音</option>
-													<option selected="selected" value="">陳瑛琪</option>
-													<option selected="selected" value="">林曉雯</option>
-													<option selected="selected" value="">陳光澄</option>
-													<option selected="selected" value="">蘇啟鴻</option>
-													<option selected="selected" value="">林政錦</option>
-													<option selected="selected" value="">呂崇富</option>
-													<option selected="selected" value="">王德華</option>
-													<option selected="selected" value="">郭景致</option>
-													<option selected="selected" value="">曲莉莉</option>
-													<option selected="selected" value="">林裕淇</option>
-													<option selected="selected" value="">潘志雄</option>
-													<option selected="selected" value="">劉勇麟</option>
-													<option selected="selected" value="">張翰軒</option>
-													<option selected="selected" value="">張慧</option>
-													<option selected="selected" value="">高楊達</option>
-													<option selected="selected" value="">蔡殿偉</option>
-													<option selected="selected" value="">趙士賓</option>
-													<option selected="selected" value="">陳冠燁</option>
-													<option selected="selected" value="">林紹胤</option>
+												<select class="form-control" id="ClassTeacher"
+													name="teacher">
+													<option selected="selected" value="陳文雄">陳文雄</option>
+													<option selected="selected" value="劉福音">劉福音</option>
+													<option selected="selected" value="陳瑛琪">陳瑛琪</option>
+													<option selected="selected" value="林曉雯">林曉雯</option>
+													<option selected="selected" value="陳光澄">陳光澄</option>
+													<option selected="selected" value="蘇啟鴻">蘇啟鴻</option>
+													<option selected="selected" value="林政錦">林政錦</option>
+													<option selected="selected" value="呂崇富">呂崇富</option>
+													<option selected="selected" value="王德華">王德華</option>
+													<option selected="selected" value="郭景致">郭景致</option>
+													<option selected="selected" value="曲莉莉">曲莉莉</option>
+													<option selected="selected" value="林裕淇">林裕淇</option>
+													<option selected="selected" value="潘志雄">潘志雄</option>
+													<option selected="selected" value="劉勇麟">劉勇麟</option>
+													<option selected="selected" value="張翰軒">張翰軒</option>
+													<option selected="selected" value="張慧">張慧</option>
+													<option selected="selected" value="高楊達">高楊達</option>
+													<option selected="selected" value="蔡殿偉">蔡殿偉</option>
+													<option selected="selected" value="趙士賓">趙士賓</option>
+													<option selected="selected" value="陳冠燁">陳冠燁</option>
+													<option selected="selected" value="林紹胤">林紹胤</option>
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="ClassPlace" class="col-form-label">授課地點(請選擇)</label>
-
-												<select class="form-control" id="ClassPlace">
-													<option value="">A樓</option>
-													<option value="">B樓</option>
-													<option value="">C樓</option>
-												</select>
+												<label for="ClassPlace" class="col-form-label">授課地點</label>
+												<input type="text" class="form-control" id="ClassPlace"
+													name="place">
 											</div>
 											<div class="form-group">
 												<label for="ClassScore" class="col-form-label">學分數</label> <select
-													class="form-control" id="ClassScore">
+													class="form-control" id="ClassScore" name="credit">
 													<option>1</option>
 													<option>2</option>
 													<option>3</option>
@@ -366,15 +367,13 @@
 												</select>
 
 											</div>
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-primary">確定</button>
+												<button type="button" class="btn btn-default"
+													data-dismiss="modal">取消</button>
+											</div>
 										</form>
 									</div>
-
-									<div class="modal-footer">
-										<button type="button" class="btn btn-primary">確定</button>
-										<button type="button" class="btn btn-default"
-											data-dismiss="modal">取消</button>
-									</div>
-
 								</div>
 							</div>
 						</div>
@@ -453,17 +452,15 @@
 										<%
 											try {
 												Class.forName("com.mysql.jdbc.Driver");
-												String url = "jdbc:mysql://localhost:3306/chihlee";
+												String url = "jdbc:mysql://localhost:3306/chihlee?characterEncoding=UTF-8";
 												Connection con = DriverManager.getConnection(url, "chihlee", "Chihlee123!");
 												if (con.isClosed()) {
 													out.println("連線 MySQL 失敗!!");
 												} else {
-													
-													String query = "select * from course";
 
+													String query = "select * from course";
 													Statement st = con.createStatement();
 													ResultSet rs = st.executeQuery(query);
-													out.println("Records for Database");
 													while (rs.next()) {
 										%>
 
@@ -471,10 +468,11 @@
 											<td><%=rs.getLong("id")%></td>
 											<td><%=rs.getString("courseName")%></td>
 											<td>每週<%=rs.getString("weekDay")%></td>
-											<td>第<%=rs.getString("number")%>節</td>
+											<td>第<%=rs.getString("number")%>節
+											</td>
 											<td><%=rs.getString("teacher")%></td>
 											<td><%=rs.getString("place")%></td>
-											<td>3</td>
+											<td><%=rs.getInt("credit")%></td>
 											<td>
 
 												<button type="button"
@@ -528,77 +526,13 @@
 										</tr>
 
 										<%
-											out.println(rs.getLong("id"));
-														out.println(rs.getString(1));
-														out.println(rs.getString(2));
-													}
+											}
 												}
 												con.close();
 											} catch (Exception sExec) {
 												out.println("SQL錯誤:" + sExec.toString());
 											}
 										%>
-
-
-										<tr>
-											<td>2</td>
-											<td>Accountant</td>
-											<td>Tokyo</td>
-											<td>63</td>
-											<td>2011/07/25</td>
-											<td>$170,750</td>
-											<td>3</td>
-											<td>
-
-												<button type="button"
-													class="btn btn-primary btn-circle btn-sm"
-													data-toggle="modal" data-target="#editModal">
-													<i class="fas fa-edit"></i>
-												</button>
-
-												<button type="button"
-													class="btn btn-danger btn-circle btn-sm"
-													data-toggle="modal" data-target="#deleteModal">
-													<i class="fas fa-trash"></i>
-												</button>
-												<div id="deleteModal" class="modal fade" tabindex="-1"
-													role="dialog" style="display: none;">
-													<div class="modal-dialog modal-sm" role="document">
-														<div class="modal-content">
-															<div class="modal-header">
-																<h4 class="modal-title" id="myModalLabel" style="">
-																	刪除課表</h4>
-																<button type="button" class="close" data-dismiss="modal"
-																	aria-hidden="true">×</button>
-															</div>
-															<div class="modal-body">
-																<form id="deleteForm" class="form-horizontal">
-																	<div class="form-group">
-																		<div class="col-md-12">
-																			確定要刪除 <font color="red"><span id="deleteMsg"></span></font>
-																			課表
-																		</div>
-																		<div class="col-md-12">
-																			<font color="red"><span id="deleteMsg2"></span></font>
-																		</div>
-																	</div>
-																</form>
-															</div>
-
-															<div class="modal-footer">
-																<div class="col-md-12">
-																	<button type="button" id="deleteConfirm"
-																		class="btn btn-primary">確定</button>
-																	<button type="button" id="deleteCancel"
-																		class="btn btn-primary" data-dismiss="modal">取消</button>
-																</div>
-															</div>
-
-														</div>
-													</div>
-												</div>
-											</td>
-										</tr>
 
 									</tbody>
 								</table>
@@ -616,7 +550,7 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2019</span>
+						<span>Copyright &copy; Chihlee 2019</span>
 					</div>
 				</div>
 			</footer>

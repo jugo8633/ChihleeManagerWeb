@@ -16,7 +16,7 @@
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/chihlee";
+			String url = "jdbc:mysql://localhost:3306/chihlee?characterEncoding=UTF-8";
 			Connection con = DriverManager.getConnection(url, "chihlee", "Chihlee123!");
 			if (con.isClosed()) {
 				out.println("連線 MySQL 失敗!!");
@@ -32,6 +32,8 @@
 					out.println(rs.getString(1));
 					out.println(rs.getString(2));
 				}
+				rs.close();
+				st.close();
 			}
 			con.close();
 		} catch (Exception sExec) {
